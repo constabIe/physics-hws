@@ -16,7 +16,7 @@ Choose one of the following options to compile the paper:
 ## Paper layout process
 - Fork the repository.
 
-- Create and switch to the `hwXX` branch for the `XX` homework. 
+- For each assignment create and switch to the `hwXX` branch for the `XX` homework. 
   ```
   git checkout -b hwXX
   ```
@@ -30,7 +30,7 @@ Choose one of the following options to compile the paper:
   ```
   git pull origin main
   ```
-  and checkout the new homework template
+  and checkout
   ```
   git checkout -b hw(XX + 1)
   ```
