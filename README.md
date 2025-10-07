@@ -2,7 +2,7 @@
 
 ✨ Clear and beautiful ✨ templates of the assignments at the course Physics I (Mechanics).
 
-# Install
+## Install
 ```
 git clone --recurse-submodules https://github.com/constabIe/physics-hws
 ```
