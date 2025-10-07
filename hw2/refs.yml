@@ -1,0 +1,29 @@
+cormen:
+  type: Book
+  title: Introduction to Algorithms
+  author:
+    - Cormen, Thomas H.
+    - Leiserson, Charles E.
+    - Rivest, Ronald L.
+    - Stein, Clifford      
+  edition: 4
+  publisher: MIT Press
+  date: 2022
+  address: Cambridge, MA
+  isbn: 978-0-262-04642-2
+  language: English
+  note: A comprehensive introduction to algorithms and data structures.
+
+goodrich:
+  type: Book
+  title: Data Structures and Algorithms in Java
+  author:
+    - Goodrich, Michael T.
+    - Tamassia, Roberto
+    - Michael H. Goldwasser
+  edition: 6
+  publisher: John Wiley & Sons
+  date: 2014-05-14
+  isbn: 978-1-118-77133-4
+  language: English
+  
