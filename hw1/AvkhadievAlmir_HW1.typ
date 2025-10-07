@@ -10,8 +10,8 @@
 #show: patt.with(
   title: text(size: .8em)[Homework  Assignment 1],
   
-  author: "Almir Avkhadiev",
-  email: "a.avkhadiev@innopolis.university",
+  author: "John Doe",
+  email: "j.doe@innopolis.university",
   group: "CSE07",
   
   course: "Physics I (Mechanics)",

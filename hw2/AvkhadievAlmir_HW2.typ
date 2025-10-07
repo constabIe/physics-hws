@@ -8,9 +8,9 @@
   title: [#text(size: .906em)[Homework  Assignment 2]],
 
   date: datetime.today(),
-  author: "Almir Avkhadiev",
-  group: "B24-CSE-07",
-  email: "a.avkhadiev@innopolis.university",
+  author: "John Doe",
+  group: "A113",
+  email: "j.doe@innopolis.university",
 
   course: "Physics I (Mechanics)",
   topic: "Forces and Motion",
