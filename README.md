@@ -1,5 +1,7 @@
 # Physics I (Mechanics) — Homeworks templates
 
+✨ Clear and beautiful ✨ templates of the assignments at the course Physics I (Mechanics).
+
 # Install
 ```
 git clone --recurse-submodules https://github.com/constabIe/physics-hws
