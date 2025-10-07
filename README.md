@@ -1,4 +1,4 @@
-# Physics I (Mechanics) Homeworks templates
+# Physics I (Mechanics) — Homeworks templates
 
 ## Build
 
