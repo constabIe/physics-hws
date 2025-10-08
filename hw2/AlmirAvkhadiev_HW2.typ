@@ -232,77 +232,7 @@
     + What is the maximum speed ($"m/s"thin$, round to $1$ decimal place), when the string does not break for any position of the object on the whole circle trajectory?$quad$ *(15 pts)*
   ],
   solution: [
-    The object moves in a vertical circle with negligible tangential acceleration, so we can treat the speed as constant at any instant.
-    
-    // #align(center + horizon)[
-    //   #set text(size: .9em)
-    //   #canvas({
-    //     import draw: *
-    
-    
-    
-    //     let origin = (0, 0)
-    //     let radius = 2
-    //     circle(
-    //       origin,
-    //       radius: radius,
-    //       stroke: (dash: "densely-dashed", thickness: .5pt, cap: "round"),
-    //     )
-    
-    //     let obj_1_coords = rotate-point((radius, 0), origin, 0deg)
-    //     let obj_2_coords = rotate-point((radius, 0), origin, 90deg)
-    //     let obj_3_coords = rotate-point((radius, 0), origin, 270deg)
-    
-    //     line(origin, obj_2_coords, stroke: 1pt + navy)
-    //     line(origin, obj_1_coords, stroke: (thickness: .5pt, paint: navy, cap: "round", dash: "densely-dashed"))
-    //     line(origin, obj_3_coords, stroke: (thickness: .5pt, paint: navy, cap: "round", dash: "densely-dashed"))
-    
-    //     circle(origin, radius: .05, fill: black)
-    
-    //     set-style(
-    //       mark: (end: ">", fill: blue, stroke: blue, scale: .75),
-    //       stroke: blue + .5pt,
-    //     )
-    
-    //     // top
-    //     line(obj_2_coords, move-point(obj_2_coords, 90deg, .75),)
-    //     content((), $ space arrow(m g) $, anchor: "west", )
-    
-    //     line(obj_2_coords, move-point(obj_2_coords, 270deg, 1), stroke: blue + 1pt)
-    //     content((), $ space arrow(T) $, anchor: "west")
-    
-    //     line(obj_2_coords, move-point(obj_2_coords, 90deg, 1.25))
-    //     content((), $ space F_e $, anchor: "west")
-    
-    //     circle(obj_2_coords, radius: .125, fill: luma(80%), stroke: black + .5pt)
-    
-    //     // bottom
-    //     line(obj_3_coords, move-point(obj_3_coords, 270deg, .75))
-    //     content((), $ space arrow(m g) $, anchor: "west")
-    
-    //     line(obj_3_coords, move-point(obj_3_coords, 90deg, 1))
-    //     content((), $ space arrow(T) $, anchor: "west")
-    
-    //     line(obj_3_coords, move-point(obj_3_coords, 270deg, 1.25))
-    //     content((), $ space F_e $, anchor: "west")
-    
-    //     circle(obj_3_coords, radius: .125, fill: luma(80%), stroke: black + .5pt)
-    
-    //     // right
-    //     line(obj_1_coords, move-point(obj_1_coords, 0deg, 1))
-    //     content((), $ space F_e $, anchor: "west")
-    
-    //     line(obj_1_coords, move-point(obj_1_coords, 180deg, 1))
-    //     content(move-point(move-point(obj_1_coords, 180deg, 1), 270deg, .3), $ space arrow(T) $, )
-    
-    //     line(obj_1_coords, move-point(obj_1_coords, 270deg, 1))
-    //     content((), $ space arrow(m g) $, anchor: "west")
-    
-    //     circle(obj_1_coords, radius: .125, fill: luma(80%), stroke: black + .5pt)
-    //   })
-    // ]
-    
-    Let $theta$ be the angle measured from the top of the circle (i.e. $theta_"top" = 0$ and $theta_"bottom" = pi$).
+    The object moves in a vertical circle with negligible tangential acceleration, so we can treat the speed as constant at any instant. Let $theta$ be the angle measured from the top of the circle (i.e. \ $theta_"top" = 0$ and $theta_"bottom" = pi$).
     For circular motion, the radial (centripetal) equation of motion is
     $
       T + m g dot cos theta = (m v^2) / R thin .
@@ -393,7 +323,7 @@
     
     We know that $v(0) = 0$. It  allows us to find the final velocity equation.
     $
-      0 = C + F_e / k quad => quad C = -F_e / k.
+      0 = C + F_e / k quad => quad C = -F_e / k thin .
     $
     
     \ \ \ Let's substitute the obtained constant and apply reverse substitution. And we have the velocity equation
@@ -405,12 +335,12 @@
     According to the problem $v(33) = 2 thin "m/s"$, so the maximum velocity is
     $
             2 & = v_"max" (1 - e^(-100 / 3000 dot 33)) \
-            2 & = v_"max" (1 - e^(-33/30)) \
-      v_"max" & = 2 / (1 - e^(-33/30)) \
-      v_"max" & = 2 / (1 - 0.33287) approx 2.997 thin "m/s" thin .
+            2 & = v_"max" (1 - e^(-33 \/30)) \
+      v_"max" & = 2 / (1 - e^(-33\/30)) \
+      v_"max" & = 2 / (1 - 0.33287) approx 3 thin "m/s" thin .
     $
     
-    #answer[$v_"max" = 2.99 thin "m/s"$]
+    #answer[$v_"max" = 3 thin "m/s"$]
   ],
 )
 
@@ -419,7 +349,6 @@
   description: [
     #grid(
       columns: (1.5fr, 1fr),
-      // column-gutter: pt,
       [
         *Problem 4 (25 pts).*$quad$ Block $B$ in figure (right) has the mass of $50 med "kg" thin$. The coefficient of static friction between the block and the
         table is $0.25$; an angle $theta$ is $30 degree$; assume that the cord between $B$ and the knot is horizontal.
@@ -602,12 +531,56 @@
     Find the maximum mass of block $A$ ($"kg" thin$, round to $1$ decimal place), for which the system will be stationary. Assume $g = 9.8 med "m/s"^2 thin$.
   ],
   solution: [
-    Given:
-    - Block $B$: $m_B=50 med "kg"$ on a horizontal table
-    - Static friction coefficient: $mu_s=0.25$
-    - Rope from $B$ to the knot is horizontal
-    - A second rope goes down from the knot to block $A$ (mass $m_A$)
-    - A third rope goes from the knot to the wall at angle $theta=30^degree$ above the horizontal
-    - $g=9.8 med "m/s"$
+    Let $m_B=50 med "kg"$ --- mass of the block $B$, $mu_s=0.25$ --- static friction coefficient and  $m_A$ --- mass of the block $A$.
+    
+    At the knot, three tension forces meet:
+    - $T_B$ in the horizontal rope to block $B$ (acts left on the knot),
+    - $T_A$ in the vertical rope to block $A$ (acts down on the knot),
+    - $T_w$ in the rope to the wall (acts up and right on the knot).
+    
+    Since the sum of the forces in each direction must be zero for equilibrium of the knot, the following is fair
+    $
+      cases(
+        T_w cos theta = T_B,
+        T_w sin theta = T_A
+      )
+    $
+    
+    From the system above we obtain
+    $
+      T_B = T_A cot theta thin .
+    $
+    
+    
+    Since block $A$ hangs vertically and the system is stationary, the tension in its string equals its weight:
+    $ T_A = m_A g thin . $
+    
+    Therefore, the horizontal tension on block B is
+    $
+      T_B = m_A g cot theta thin.
+    $
+    
+    Block $B$ tends to move horizontally but is held by static friction. The maximum frictional force before slipping is
+    $
+      f_"max" = mu m_B g thin .
+    $
+    At the threshold of motion (the limiting case where $B$ is just about to move),
+    $
+      T_B = f_"max" thin.
+    $
+    Substituting the expression for $T_B$:
+    $
+      m_A g cot theta = mu_s m_B g thin.
+    $
+    Rearranging equation we obtain $m_A$
+    $
+      m_A & = mu_s m_B tan theta thin .
+    $
+    Substituting the given values we have
+    $
+      m_A &= 0.25 times 50 times tan 30^degree &= 12.5 times 0.577 &= 7.2125 &approx 7.2 med "kg" thin .
+    $
+    
+    #answer[$m_A = 7.2 med "kg"$]
   ],
 )
