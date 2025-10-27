@@ -14,38 +14,28 @@
   topic: [Energy and Work],
   
   fontsize: 10pt,
-  // bibliography: bibliography(title: "References", style: "ieee", "refs.yml"), // comment the line if you do not need citing
 )
 
-#let kilograms = "kg"
-#let meters = "m"
-#let newtons = "N"
-#let kilometerss = "km"
-#let hours = "h"
-#let centimetres = "cm"
-#let joules = "J"
-#let grams = "g"
-
-// #show math.equation: set math.frac(style: "skewed")
 #show figure: set block(above: 2em, below: 2em)
+
+#let vv = context v(-2 * par.spacing)
 
 #task(
   name: [Problem 1 (25 pts).],
   description: [
     One particular glitch in the Mafia 3 video game resulted in the player's character getting launched into the air after being intermittently #footnote[PixeliSoturi (2016), #text(style: "italic")[Mafia 3 -- Turbo jump -- Trampoline Bug],
-    https://www.youtube.com/watch?v=5hKXFhVbMH0
-    
-] stuck inside a motor boat. A hyper-realistic representation of this scene is shown on @glitch. The known quantities are: mass of the character $m = 80 med kilograms$, maximum launch height $H = 70 med meters$, initial penetration of the character's feet into the boat's hull $x = 0.5 med meters$. 
+    https://www.youtube.com/watch?v=5hKXFhVbMH0] stuck inside a motor boat. A hyper-realistic representation of this scene is shown on @glitch. The known quantities are: mass of the character $m = 80 med "kg"$, maximum launch height $H = 70 med "m"$, initial penetration of the character's feet into the boat's hull $x = 0.5 med "m"$.
+      
     #v(-1.2em)
     #figure(
       caption: [The glitch representation.],
       image("assets/1.png", width: 35%)
     ) <glitch>
     
-    + Assuming that the boat's hull can be modeled as an ideal spring with the stiffness coefficient $k$, what should be the value of $k$ (in $newtons\/meters$, round to nearest thousand) so that the character is launched into the air by a given height $H$? Neglect air drag.$quad$*(15 pts)*
+    + Assuming that the boat's hull can be modeled as an ideal spring with the stiffness coefficient $k$, what should be the value of $k$ (in $"N"\/"m"$, round to nearest thousand) so that the character is launched into the air by a given height $H$? Neglect air drag.$quad$*(15 pts)*
     
-    + What is the maximum character's speed $v_i$ (in $kilometerss\/hours$, round to one decimal place)?$quad$*(10 pts)* 
-
+    + What is the maximum character's speed $v_i$ (in $"km/h"$, round to one decimal place)?$quad$*(10 pts)*
+    
   ],
   solution: [
     #lorem(90)
@@ -55,7 +45,7 @@
 #task(
   name: [Problem 2 (25 pts).],
   description: [
-    An object of mass $m = 50 med grams$ slides with the zero initial velocity down an inclined plane set at an angle $alpha = 30 degree$ to the horizontal. It successfully slides down, then covers the distance of $50 med centimetres$ on the horizontal plane, and stops. Find the work (in $joules$, round to two decimal places) performed by the friction forces over the whole distance, assuming the friction coefficient $k = 0.15$ for both inclined and horizontal planes.
+    An object of mass $m = 50 med "g"$ slides with the zero initial velocity down an inclined plane set at an angle $alpha = 30 degree$ to the horizontal. It successfully slides down, then covers the distance of $50 med "cm"$ on the horizontal plane, and stops. Find the work (in $"J"$, round to two decimal places) performed by the friction forces over the whole distance, assuming the friction coefficient $k = 0.15$ for both inclined and horizontal planes.
     
     #figure(
       caption: [Sliding of the object. ],
@@ -64,7 +54,7 @@
   ],
   solution: [
     #lorem(90)
-    #answer[#lorem(10)] #v(-2.4em)
+    #answer[#lorem(10)] #vv
   ]
 )
 #task(

@@ -6,12 +6,15 @@
 
 #show: patt.with(
   title: [#text(size: .906em)[Homework  Assignment 2]],
-  author: "Almir Avkhadiev",
-  group: "B24-CSE-07",
-  email: "a.avkhadiev@innopolis.university",
+  
   date: datetime.today(),
+  author: "John Doe",
+  group: "A113",
+  email: "j.doe@innopolis.university",
+  
   course: "Physics I (Mechanics)",
   topic: "Forces and Motion",
+  
   fontsize: 10pt,
   bibliography: none,
 )

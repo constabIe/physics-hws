@@ -12,7 +12,7 @@
   
   author: "John Doe",
   email: "j.doe@innopolis.university",
-  group: "CSE07",
+  group: "A113",
   
   course: "Physics I (Mechanics)",
   topic: "Kinematics",
