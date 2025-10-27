@@ -16,7 +16,6 @@
   topic: "Forces and Motion",
   
   fontsize: 10pt,
-  bibliography: none,
 )
 
 // Rotate point `(x, y)` relative to the point `(ox, oy)` in `theta` degree direction
@@ -136,45 +135,7 @@
   
   ],
   solution: [
-    At terminal velocity the drag balances weight:
-    $
-      D = (C_d thin rho thin A thin v^2) / 2 quad => quad v_"term" = sqrt((2 m g) / (C_d rho A)) thin .
-    $
-    
-    #set list(indent: 0em, spacing: 2em)
-    
-    #let calc-v-term(C_d: 1, A: 1, m: 1) = calc.round(calc.sqrt((2 * m * 9.8) / (C_d * 1.007 * A)), digits: 2)
-    
-    #let nums(C_d: 1, A: 1, m: 1) = {
-      let res = calc-v-term(C_d: C_d, A: A, m: m)
-      $ v_"term" = sqrt((2 times #m times 9.8) / (#C_d times 1.007 times #A)) approx res med "m/s" $
-    }
-    
-    #let v1 = calc-v-term(C_d: 0.5, A: 2.58, m: 2500)
-    #let v2 = calc-v-term(C_d: 0.38, A: 2.41, m: 2450)
-    #let v3 = calc-v-term(C_d: 0.33, A: 2.225, m: 1550)
-    - Jeep Rubicon
-      #nums(C_d: 0.5, A: 2.58, m: 2500)
-    - Dodge Challenger  SRT (2015)
-      #nums(C_d: 0.38, A: 2.41, m: 2450)
-    - Subaru  WRX STi
-      #nums(C_d: 0.33, A: 2.225, m: 1550)
-    
-    #answer[
-      #let v1 = calc-v-term(C_d: 0.5, A: 2.58, m: 2500)
-      #let v2 = calc-v-term(C_d: 0.38, A: 2.41, m: 2450)
-      #let v3 = calc-v-term(C_d: 0.33, A: 2.225, m: 1550)
-      
-      #table(
-        columns: 2,
-        stroke: none,
-        align: (left),
-        // [*Car*], [$v_"term"$],
-        [*Jeep Rubicon*], [$v_"term" = #calc.round(v1, digits: 1)med "m/s"$],
-        [*Dodge Challenger \SRT (2015)*], [ $v_"term" = #calc.round(v2, digits: 1)med "m/s"$],
-        [*Subaru  WRX STi*], [ $v_"term" = #calc.round(v3, digits: 1)med "m/s"$],
-      )
-    ]
+    // Insert your solution here
   ],
 )
 
@@ -235,40 +196,80 @@
     + What is the maximum speed ($"m/s"thin$, round to $1$ decimal place), when the string does not break for any position of the object on the whole circle trajectory?$quad$ *(15 pts)*
   ],
   solution: [
-    The object moves in a vertical circle with negligible tangential acceleration, so we can treat the speed as constant at any instant. Let $theta$ be the angle measured from the top of the circle (i.e. \ $theta_"top" = 0$ and $theta_"bottom" = pi$).
-    For circular motion, the radial (centripetal) equation of motion is
+    = Math mode
     $
-      T + m g dot cos theta = (m v^2) / R thin .
+      A = pi r^2
     $
-    Therefore,
     $
-      T(theta) = (m v^2) / R - m g dot cos theta thin .
+      "area" = pi dot "radius"^2
     $
+    $
+      cal(A) :=
+      { x in RR | x "is natural" }
+    $
+    #let x = 5
+    $#x < 17$
     
-    Since $cos theta in [-1; +1]$, the tension $T$ is maximum when $cos theta$ is minimum, i.e.
-    $
-      cos theta = -1 quad => quad theta = pi thin .
-    $
+    = Lists
+    == Bulleted
+    Normal list.
+    - Text
+    - Math
+    - Layout
+    - ...
     
-    Hence, the tension is maximum at the *lowest point* of the circular path.
+    Multiple lines.
+    - This list item spans multiple
+      lines because it is indented.
     
+    Function call.
+    #list(
+      [Foundations],
+      [Calculate],
+      [Construct],
+      [Data Loading],
+    )
     
-    The string will break if $T_"bottom" > T_"max" thin$. Since $T_"bottom" = T_"max" thin$,
-    $
-      T_"max" = (m v^2) / R + m g thin quad => quad v_"max" = sqrt((R thin(T_"max" - m g)) / m) thin .
-    $
+    == Numbered
+    Automatically numbered:
+    + Preparations
+    + Analysis
+    + Conclusions
     
-    Substituting the given values, we have the maximum speed:
-    $
-      v_max & = sqrt((R thin T_"max" - R thin m g) / m) = sqrt((R thin T_"max") / m - R thin g) = \
-            & = sqrt((0.7 times 30) / 0.25 - 0.7 times 9.8) = sqrt(7714) / 10 approx 8.8 med "m/s" thin .
-    $
+    Manually numbered:
+    2. What is the first step?
+    5. I am confused.
+    + Moving on ...
     
-    #answer[
-      #set enum(indent: 0em, spacing: 0.65em)
-      + The maximum tension is reached at the *lowest point* of the circular path.
-      + $v_"max" eq 8.8 med "m/s" thin$
+    Function call.
+    #enum[First][Second]
+    
+    = Image
+    #align(center)[
+      #image("assets/uiiiaa.JPG", width: 90%)
     ]
+    
+    = Citing
+    #lorem(10) @cormen
+    
+    = Plotting
+    
+    Plotting in `typst` @plotex with #link("https://typst.app/universe/package/lilaq")[`lilaq`] library is as powerfull as with `matplotlib` library in `python`$dots$
+    #figure(
+      caption: [Plot example.],
+      supplement: "Figure",
+      [
+        #lq.diagram(
+          lq.plot(
+            range(8),
+            (3, 6, 2, 6, 5, 9, 0, 4),
+            smooth: true,
+          ),
+        )
+      ],
+    ) <plotex>
+    
+    #answer[#lorem(5)]
   ],
 )
 
@@ -285,65 +286,7 @@
     Where $arrow(v)$ denotes the boat velocity and $k = 100 med "kg/s" thin .$
   ],
   solution: [
-    According to the second Newton law, the sum of all the forces acting on the body is equal to the product of mass and acceleration. Thus,
-    $
-      m thin (dif v) / (dif t) = F_e - k v thin ,
-    $
-    where $F_e$ --- engine force.
-    
-    Let's rewrite the formula above in the form
-    $
-      (dif v) / (dif t) + a v = b thin ,
-    $
-    where $a = k / m$ and $b = F_e / m thin$. This is the non-homogeneous linear first order differential equation and the solution to this is the velocity equation that we need.
-    
-    To solve it, we first find the integrating factor, which is
-    $
-      mu(t) = e^(integral a dif t) = e^(a t + C) = B e^(a t) ,
-    $
-    where $B, C in RR thin$.
-    
-    Next, we apply the product rule
-    $
-      (mu(t) thin v(t))' = mu(t) thin b(t) quad => quad (e^(a t) v)' = e^(a t) thin b thin .
-    $
-    
-    Integrate both sides to get the solution
-    $
-      integral e^(a t) v dif t & = integral e^(a t) b dif t \
-    $
-    $
-      e^(a t) v + C_1 & = b / a med e^(a t) b + C_2 \
-            e^(a t) v & = b / a med e^(a t) + C \
-                    v & = b / a + C e^(- a t) thin ,
-    $
-    where $C, C_1, C_2 in RR thin .$
-    
-    And the general solution of the DE is
-    $
-      v(t) & = b / a + C e^(-a t) thin .
-    $
-    
-    We know that $v(0) = 0$. It  allows us to find the final velocity equation.
-    $
-      0 = C + F_e / k quad => quad C = -F_e / k thin .
-    $
-    
-    \ \ \ Let's substitute the obtained constant and apply reverse substitution. And we have the velocity equation
-    $
-      v(t) = v_("max") (1 - e^(-k/m t)) thin ,
-    $
-    where $v_("max") = F_e / k$ is the maximum speed at which the engine power $F_e$ it is balanced by the resistance force $k v$, and the acceleration becomes zero.
-    
-    According to the problem $v(33) = 2 thin "m/s"$, so the maximum velocity is
-    $
-            2 & = v_"max" (1 - e^(-100 / 3000 dot 33)) \
-            2 & = v_"max" (1 - e^(-33 \/30)) \
-      v_"max" & = 2 / (1 - e^(-33\/30)) \
-      v_"max" & = 2 / (1 - 0.33287) approx 3 thin "m/s" thin .
-    $
-    
-    #answer[$v_"max" = 3 thin "m/s"$]
+    // Insert your solution here
   ],
 )
 
@@ -534,56 +477,8 @@
     Find the maximum mass of block $A$ ($"kg" thin$, round to $1$ decimal place), for which the system will be stationary. Assume $g = 9.8 med "m/s"^2 thin$.
   ],
   solution: [
-    Let $m_B=50 med "kg"$ --- mass of the block $B$, $mu_s=0.25$ --- static friction coefficient and  $m_A$ --- mass of the block $A$.
-    
-    At the knot, three tension forces meet:
-    - $T_B$ in the horizontal rope to block $B$ (acts left on the knot),
-    - $T_A$ in the vertical rope to block $A$ (acts down on the knot),
-    - $T_w$ in the rope to the wall (acts up and right on the knot).
-    
-    Since the sum of the forces in each direction must be zero for equilibrium of the knot, the following is fair
-    $
-      cases(
-        T_w cos theta = T_B,
-        T_w sin theta = T_A
-      )
-    $
-    
-    From the system above we obtain
-    $
-      T_B = T_A cot theta thin .
-    $
-    
-    
-    Since block $A$ hangs vertically and the system is stationary, the tension in its string equals its weight:
-    $ T_A = m_A g thin . $
-    
-    Therefore, the horizontal tension on block B is
-    $
-      T_B = m_A g cot theta thin.
-    $
-    
-    Block $B$ tends to move horizontally but is held by static friction. The maximum frictional force before slipping is
-    $
-      f_"max" = mu m_B g thin .
-    $
-    At the threshold of motion (the limiting case where $B$ is just about to move),
-    $
-      T_B = f_"max" thin.
-    $
-    Substituting the expression for $T_B$:
-    $
-      m_A g cot theta = mu_s m_B g thin.
-    $
-    Rearranging equation we obtain $m_A$
-    $
-      m_A & = mu_s m_B tan theta thin .
-    $
-    Substituting the given values we have
-    $
-      m_A &= 0.25 times 50 times tan 30^degree &= 12.5 times 0.577 &= 7.2125 &approx 7.2 med "kg" thin .
-    $
-    
-    #answer[$m_A = 7.2 med "kg"$]
+    // Insert your solution here
   ],
 )
+
+#bibliography(title: "References", style: "ieee", "refs.yml")

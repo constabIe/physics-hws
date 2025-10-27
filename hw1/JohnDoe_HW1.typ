@@ -16,8 +16,6 @@
   
   course: "Physics I (Mechanics)",
   topic: "Kinematics",
-  
-  bibliography: bibliography(title: "References", "refs.yml"), // comment the line if you do not need citing
 )
 
 #let style-options = (
@@ -212,3 +210,5 @@
     // Insert your solution here.
   ],
 )
+
+#bibliography(title: "References", "refs.yml")

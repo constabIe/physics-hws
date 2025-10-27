@@ -18,8 +18,6 @@
 
 #show figure: set block(above: 2em, below: 2em)
 
-#let vv = context v(-2 * par.spacing)
-
 #task(
   name: [Problem 1 (25 pts).],
   description: [
@@ -54,7 +52,7 @@
   ],
   solution: [
     #lorem(90)
-    #answer[#lorem(10)] #vv
+    #answer[#lorem(10)] #vanswer
   ]
 )
 #task(
