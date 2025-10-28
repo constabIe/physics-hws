@@ -1,6 +1,6 @@
 # Physics I (Mechanics) — Homeworks templates
 
-✨ Clear and beautiful ✨ templates of the assignments at the course Physics I (Mechanics).
+✨ Clear and beautiful ✨ templates of the assignments for the course Physics I (Mechanics).
 
 ## Install
 ```
